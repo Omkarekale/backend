@@ -18,16 +18,21 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 app.use(cookieParser());
-const corsOptions = {
-    origin: [
-        // "https://twitter-clone-3-txso.onrender.com",
-        "https://comforting-pony-58050e.netlify.app"
-        // "http://localhost:3000"
-        // "http://localhost:3000", 
-    ],
+// const corsOptions = {
+//     origin: [
+//         // "https://twitter-clone-3-txso.onrender.com",
+//         "https://comforting-pony-58050e.netlify.app"
+//         // "http://localhost:3000"
+//         // "http://localhost:3000", 
+//     ],
+//     credentials: true
+// }
+app.use(cors({
+    origin: 'https://comforting-pony-58050e.netlify.app',
     credentials: true
-}
-app.use(cors(corsOptions));
+}));
+
+// app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
     res.send('Welcome to the API');
