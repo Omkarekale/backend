@@ -38,8 +38,8 @@ app.get('/', (req, res) => {
     res.send('Welcome to the API');
 });
 // api
-app.use("/api/v1/user", userRoute);
-app.use("/api/v1/tweet", tweetRoute);
+app.use("api/v1/user", userRoute);
+app.use("api/v1/tweet", tweetRoute);
 
 
 app.listen(process.env.PORT, () => {
